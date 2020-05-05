@@ -6,7 +6,8 @@ class AddressTextField extends React.Component {
     const { validator } = this.props;
     return (
       <Field
-       {...this.props}
+        {...this.props}
+        parse={v => v}
         validate={validator}
       />
     ); 
