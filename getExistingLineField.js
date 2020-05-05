@@ -1,8 +1,8 @@
 const getExistingLineField = (lineArray, field) => {
-  lineArray?.filter((line) => {
-    line.type?.value === field
-  })?.getAt(0)
+  const filteredArray = lineArray?.filter((line) => {
+    return line.type?.value === field;
+  })
+  return filteredArray?.[0];
 }
 
 export default getExistingLineField;
-
