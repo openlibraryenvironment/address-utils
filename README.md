@@ -6,7 +6,7 @@ This is a set of functions and components designed to work across many `address-
 For the generic information about how these plugins operate, please see [here](https://github.com/openlibraryenvironment/address-plugin-generic/blob/master/README.md). (I'd HIGHLY recommend starting there rather than trying to jump in blind here).
 
 ## Functions
-This set `address-utils` currently comprises of 2 functions and a component:
+This set `address-utils` currently comprises of 3 functions and a component:
 - getExistingLineField
 - deleteFieldIfExists
 - AddressTextField
@@ -22,6 +22,11 @@ This function simply parses the array of lines, and returns the one whose `line.
 
 ### deleteFieldIfExists
 This function accepts the same props as `getExistingLineField` above. It calls `getExistingLineField` in order to find the id of the saved line, and then returns an object `{id: "some_id", _delete:true}` In our backend setup this will delete the line saved with that id, but this may not be universal, and so you may need to write code to mimic this functionality for _your_ backend model wherever it is used.
+
+### toKebabCase
+This function simply translates a string into kebab-case.
+i.e.
+`Northern Ireland -> northern-ireland`
 
 ### AddressTextField
 This is a simple component which just returns a final-form `Field` with the props passed to it and `parse={v => v}`, which is simply there to allow "empty" inputs such as " " to be submitted. This component accepts props handed to it directly from `AddressFields` from each plugin. See the general documentation for the props expected by that component, as they are simply passed through to here.
