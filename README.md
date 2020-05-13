@@ -9,6 +9,7 @@ For the generic information about how these plugins operate, please see [here](h
 This set `address-utils` currently comprises of 3 functions and a component:
 - getExistingLineField
 - deleteFieldIfExists
+- toKebabCase
 - AddressTextField
 
 We'll go over these one by one.
