@@ -1,7 +1,12 @@
 import React from 'react';
-import { Field } from 'react-final-form'
+import PropTypes from 'prop-types';
+import { Field } from 'react-final-form';
 
 class AddressTextField extends React.Component {
+  static propTypes = {
+    validator: PropTypes.func,
+  };
+
   render() {
     const { validator, ...restOfProps } = this.props;
     return (
@@ -10,7 +15,7 @@ class AddressTextField extends React.Component {
         parse={v => v}
         validate={validator}
       />
-    ); 
+    );
   }
 }
 
