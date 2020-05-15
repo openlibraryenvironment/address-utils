@@ -3,10 +3,10 @@ import { Field } from 'react-final-form'
 
 class AddressTextField extends React.Component {
   render() {
-    const { validator } = this.props;
+    const { validator, ...restOfProps } = this.props;
     return (
       <Field
-        {...this.props}
+        {...restOfProps}
         parse={v => v}
         validate={validator}
       />
