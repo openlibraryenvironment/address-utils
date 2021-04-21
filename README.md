@@ -26,3 +26,15 @@ This function accepts the same props as `getExistingLineField` above. It calls `
 
 ### AddressTextField
 This is a simple component which just returns a final-form `Field` with the props passed to it and `parse={v => v}`, which is simply there to allow "empty" inputs such as " " to be submitted. This component accepts props handed to it directly from `AddressFields` from each plugin. See the general documentation for the props expected by that component, as they are simply passed through to here.
+
+## Release Procedure
+
+* Check CHANGELOG.md
+* Check correct version in package.json
+* Check everything
+* Re-Check everything
+* Make preparatory commit
+* Tag - git tag -a vn.n.n -m "Tagged version n.n.n"
+* git push origin vn.n.n (Or your preferred variant) 
+* Jenkins does it's magic causing release artefacts to appear in nexus
+* Update the version in package.json and open the new version in CHANGELOG.md
